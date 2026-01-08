@@ -12,6 +12,10 @@ export class PrismaConfig {
     }
 
     this.databaseUrl = url;
+
+    if (process.env.NODE_ENV === 'test') {
+      this.validateTestDatabase();
+    }
   }
 
   getDatabaseUrl(): string {
@@ -20,5 +24,20 @@ export class PrismaConfig {
 
   getDatabaseProtocol(): string {
     return this.databaseUrl.split(':')[0];
+  }
+
+  getDatabaseSchema(): string {
+    if (this.getDatabaseProtocol() !== 'postgresql') {
+      throw new Error('Database schema only exists for PostgreSQL databases');
+    }
+
+    const schemaMatch = this.databaseUrl.match(/schema=([^&]+)/);
+    return schemaMatch ? schemaMatch[1] : 'public';
+  }
+
+  private validateTestDatabase(): void {
+    if (!this.databaseUrl.includes('test')) {
+      throw new Error('DATABASE_URL seems not point to a test database');
+    }
   }
 }
