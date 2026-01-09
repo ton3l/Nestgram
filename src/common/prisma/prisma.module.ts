@@ -1,8 +1,8 @@
+import { PrismaConnectionFactory } from '@prisma-module/connection.factory';
+import { PrismaService } from '@prisma-module/prisma.service';
+import { PrismaConfig } from '@prisma-module/prisma.config';
+import { PrismaClient } from '@prisma-client/client';
 import { Module, Global } from '@nestjs/common';
-import { PrismaClient } from 'src/generated/prisma/client';
-import { PrismaConfig } from './prisma.config';
-import { PrismaConnectionFactory } from './connection.factory';
-import { PrismaService } from './prisma.service';
 
 @Global()
 @Module({

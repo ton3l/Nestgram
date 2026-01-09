@@ -1,5 +1,5 @@
+import { AppModule } from '@nestgram/app.module';
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
 import 'dotenv/config';
 
 async function bootstrap() {

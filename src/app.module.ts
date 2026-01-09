@@ -1,7 +1,7 @@
+import { PrismaModule } from '@prisma-module/prisma.module';
+import { AppController } from '@nestgram/app.controller';
+import { AppService } from '@nestgram/app.service';
 import { Module } from '@nestjs/common';
-import { PrismaModule } from './common/prisma/prisma.module';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 
 @Module({
     imports: [PrismaModule],

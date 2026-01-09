@@ -1,6 +1,6 @@
-import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
 import type { SqlDriverAdapterFactory as DriverAdapter } from '@prisma/client/runtime/client';
-import { PrismaClient } from 'src/generated/prisma/client';
+import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
+import { PrismaClient } from '@prisma-client/client';
 
 export interface DbConnectionData {
     readonly adapter: DriverAdapter;

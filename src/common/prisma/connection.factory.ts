@@ -1,8 +1,8 @@
-import type { DbConnectionData } from './prisma.service';
-import { PrismaClient } from 'src/generated/prisma/client';
-import { PrismaConfig } from './prisma.config';
-import { PrismaPg } from '@prisma/adapter-pg';
+import type { DbConnectionData } from '@prisma-module/prisma.service';
+import { PrismaConfig } from '@prisma-module/prisma.config';
 import { PrismaMariaDb } from '@prisma/adapter-mariadb';
+import { PrismaClient } from '@prisma-client/client';
+import { PrismaPg } from '@prisma/adapter-pg';
 
 export class PrismaConnectionFactory {
     static create(config: PrismaConfig): DbConnectionData {
