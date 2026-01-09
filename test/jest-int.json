@@ -1,14 +1,14 @@
 {
-  "moduleFileExtensions": ["js", "json", "ts"],
-  "rootDir": "../src",
-  "testEnvironment": "node",
-  "testRegex": ".int-spec.ts$",
-  "transform": {
-    "^.+\\.(t|j)s$": "ts-jest"
-  },
-  "globalSetup": "../test/global-setup.ts",
-  "moduleNameMapper": {
-    "^src/(.*)$": "<rootDir>/$1",
-    "^(\\.{1,2}/.*)\\.js$": "$1"
-  }
+    "moduleFileExtensions": ["js", "json", "ts"],
+    "rootDir": "../src",
+    "testEnvironment": "node",
+    "testRegex": ".int-spec.ts$",
+    "transform": {
+        "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "globalSetup": "../test/global-setup.ts",
+    "moduleNameMapper": {
+        "^src/(.*)$": "<rootDir>/$1",
+        "^(\\.{1,2}/.*)\\.js$": "$1"
+    }
 }
