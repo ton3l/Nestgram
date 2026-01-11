@@ -1,0 +1,16 @@
+node_modules
+
+git
+.gitignore
+
+eslint.config.mjs
+tsconfig.json
+tsconfig.build.json
+prettierrc
+nest-cli.json
+
+test
+
+.env
+
+README.md

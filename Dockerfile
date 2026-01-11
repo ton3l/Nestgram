@@ -1,13 +1,11 @@
-FROM node:latest
+FROM node:lts-alpine
 
 WORKDIR /app
 
 COPY package*.json .
 
-RUN npm install --production
+RUN npm install --omit=dev
 
 COPY dist .
-
-ENV DATABASE_URL=mysql://localhost:3306/nestgram
 
 CMD ["node", "src/main.js"]
