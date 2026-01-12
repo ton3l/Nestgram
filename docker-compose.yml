@@ -5,9 +5,11 @@ services:
     ports: 
       - "80:3000"
     env_file: .env.prod
+    #restart: unless-stopped
     depends_on:
       - mysql
-    command: sh -c "npx prisma db push --schema=./prisma/schema.prisma && node src/main.js"
+    #command: sh -c "npx prisma db push --schema=./prisma/schema.prisma && node src/main.js"
+    command: tail -f /dev/null
 
   mysql:
     image: mysql:lts-oraclelinux9
@@ -18,3 +20,4 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_HOST: "%"
