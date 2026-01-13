@@ -7,13 +7,11 @@
     "license": "UNLICENSED",
     "scripts": {
         "build": "nest build",
-        "build:image": "npm run build ; docker build -t nestgram:v1 .",
         "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
         "start": "nest start --env-file=.env.local",
         "start:dev": "nest start --watch --env-file=.env.local",
         "start:debug": "nest start --debug --watch --env-file=.env.local",
         "start:prod": "node --env-file=.env.local dist/src/main",
-        "start:compose": "npm run build ; docker compose --env-file=.env.compose up",
         "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
         "test": "jest",
         "test:watch": "jest --watch",
